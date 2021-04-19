@@ -2,7 +2,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
-
 class TestTestcase():
     def setup_method(self,mehtod):
         self.driver = webdriver.Chrome()
@@ -17,4 +16,6 @@ class TestTestcase():
         result = element.get_attribute("class")
         assert 'active' == result
         time.sleep(2)
-
+    def test_wx(self):
+        self.driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?from=myhome")
+        time.sleep(10)

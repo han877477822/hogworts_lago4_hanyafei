@@ -25,4 +25,16 @@ select=Select(driver.find_element(By.XPATH,"//*[@id='app']/div/div/div[1]/div/di
 select.deselect_by_value("自研")
 # driver.quit()
     # def test_demo1(self):
-
+def test_cookie(self):
+    # self.driver.get("https://work.weixin.qq.com/wework_admin/frame#index")
+    # sleep(3)
+    # cookies = self.driver.get_cookies()
+    # print(cookies)
+    cookies=[]
+    self.driver.get("https://work.weixin.qq.com/wework_admin/frame#index")
+    sleep(2)
+    self.driver.maximize_window()
+    for cookie in cookies:
+        self.driver.add_cookie(cookie)
+    self.driver.refresh()
+    sleep(3)
